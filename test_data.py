@@ -46,7 +46,7 @@ tests={'5mas_helix7':{
           'test_case':'4ubz',
           'data':os.path.join(data_dir, '4ubz.mtz'),
           'seq':os.path.join(data_dir, '4ubz.seq'),
-          'search':' --ensemble {} --rescore_models'.format(os.path.join(data_dir, 'anti_0-strands-5.pdb')),
+          'search':' --ensemble {} --rescore_models --ACORN_definitive_CC 0.41'.format(os.path.join(data_dir, 'anti_0-strands-5.pdb')),
           'log_root':'4ubz_anti-0_rescore_models',
           'results_json':'4ubz_Fragon_1x_anti_0-strands-5.json'
           },
