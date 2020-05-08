@@ -1,7 +1,7 @@
 import os
 from fragon_regression.test_data import tests, nproc, compiler
 from fragon_regression.test_runner import run_test
-expected_result = {'darwin_ifort':0.61251, 'linux2_gfortran':0.62390, 'win32_gfortran':0.62390,
+expected_result = {'darwin_ifort':0.61251, 'linux_gfortran':0.62390, 'win32_gfortran':0.62390,
                    'darwin_gfortran':0.6239}
 def test(tmpdir):
   os.chdir(tmpdir.strpath)
