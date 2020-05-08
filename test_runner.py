@@ -21,7 +21,7 @@ def get_fragon_exe():
     fragon += '.bat'
   return fragon
 
-def run_test(test, expected_result, nproc):
+def run_test(test, expected_result, compiler, nproc):
   fragon_command_line = get_fragon_exe()
   fragon_command_line += ' --mtz {}'.format(test['data'])
   if test['seq'] is not None:
@@ -43,4 +43,4 @@ def run_test(test, expected_result, nproc):
       print(f.read(), file=sys.stderr)
     raise(e)
   assert result['acornCC'] is not None
-  assert result['acornCC'] == expected_result['_'.join([sys.platform, 'py2' if sys.version_info < (3,0) else 'py3'])]
+  assert result['acornCC'] == expected_result['_'.join([sys.platform, compiler])]

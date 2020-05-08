@@ -1,5 +1,13 @@
 import os
 regression_dir=os.environ['FRAGON_REGRESSION']
+try:
+  compiler=os.environ['FC']
+  if 'ifort' in os.environ['FC']:
+    compiler = 'ifort'
+  else:
+    compiler = 'gfortran'
+except KeyError:
+  compiler = 'gfortran'
 data_dir=os.path.join(regression_dir,'data')
 nproc = 4
 tests={'5mas_helix7':{
