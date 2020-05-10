@@ -43,4 +43,4 @@ def run_test(test, expected_result, compiler, nproc):
       print(f.read(), file=sys.stderr)
     raise(e)
   assert result['acornCC'] is not None
-  assert result['acornCC'] == expected_result['_'.join([sys.platform[:5] if 'linux' in sys.platform else sys.platform, compiler])]
+  assert result['acornCC'] == expected_result['_'.join(['{}_{}'.format(sys.platform[:5], 'py2' if sys.version_info < (3,0) else 'py3') if 'linux' in sys.platform else sys.platform, compiler])]
