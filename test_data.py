@@ -1,6 +1,10 @@
 import os
 regression_dir=os.environ['FRAGON_REGRESSION']
 try:
+   strict = os.environ['STRICT_REGRESSION']
+except KeyError:
+   strict = False
+try:
   compiler=os.environ['FC']
   if 'ifort' in os.environ['FC']:
     compiler = 'ifort'
